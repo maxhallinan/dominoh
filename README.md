@@ -65,3 +65,42 @@ Output:
     "document": "\"Information is both input and output of its own production process.\""
 }
 ```
+
+#### Fragment: Sourced
+
+```
+:::
+sources:
+    Benkler:
+        title: The Wealth of Networks
+        location: ISBN 9780300127232
+:::
+
+::"Information is both input and output of its own production process."::[Benkler:: Chapter 2]
+```
+
+```json
+{
+    "sources": [
+        {
+            "_id": 4,
+            "title": "The Wealth of Networks",
+            "fragments": [
+                {
+                    "_id": 1,
+                    "location": ["ISBN 9780300127232", "Chapter 2"]
+                }
+            ]
+        }
+    ], 
+    "fragments": [
+        {
+            "_id": 1,
+            "text": "\"Information is both input and output of its own production process.\"",
+            "start": 0,
+            "end": 72
+        },
+    ],
+    "document": "\"Information is both input and output of its own production process.\""
+}
+```
