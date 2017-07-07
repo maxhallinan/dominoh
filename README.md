@@ -11,7 +11,7 @@ A lightweight markup language (LML) for notetaking.
 Input:
 
 ```
-::"Information is both input and output of its own production process."::
+::Information is both input and output of its own production process.::
 ```
 
 Output:
@@ -20,7 +20,7 @@ Output:
 {
     "fragments": [
         {
-            "text": "\"Information is both input and output of its own production process.\"",
+            "text": "Information is both input and output of its own production process.",
             "start": [1, 1],
             "end": [1, 72]
         }
@@ -33,7 +33,7 @@ Output:
 Input:
 
 ```
-::"Information is both input and output of its own production process."|networked information economy, Yochai Benkler|
+::Information is both input and output of its own production process.|networked information economy, Yochai Benkler|
 ```
 
 Output:
@@ -42,7 +42,7 @@ Output:
 {
     "fragments": [
         {
-            "text": "\"Information is both input and output of its own production process.\"",
+            "text": "Information is both input and output of its own production process.",
             "start": [1, 1],
             "end": [1, 72]
         }
