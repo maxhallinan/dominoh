@@ -1,6 +1,6 @@
 # dominoh 
 
-A lightweight markup language (LML) for notetaking. 
+A lightweight markup language (LML) for note-taking. 
 
 ## Markup
 
