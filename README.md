@@ -1,4 +1,4 @@
-# Domino 
+# dominoh 
 
 A lightweight markup language (LML) for notetaking. 
 
@@ -20,13 +20,11 @@ Output:
 {
     "fragments": [
         {
-            "_id": 1,
             "text": "\"Information is both input and output of its own production process.\"",
-            "start": 0,
-            "end": 72
+            "start": [0, 0],
+            "end": [0, 72]
         }
-    ],
-    "document": "\"Information is both input and output of its own production process.\""
+    ]
 }
 ```
 
@@ -44,24 +42,20 @@ Output:
 {
     "fragments": [
         {
-            "_id": 1,
             "text": "\"Information is both input and output of its own production process.\"",
-            "start": 0,
-            "end": 72
-        },
+            "start": [0, 0],
+            "end": [0, 72]
+        }
     ],
     "tags": [
         {
-            "_id": 2,
             "name": "networked information economy",
-            "fragments": [1]
+            "fragments": [0]
         },
         {
-            "_id": 3,
             "name": "Yochai Benkler",
-            "fragments": [1] 
+            "fragments": [0] 
         }
-    ],
-    "document": "\"Information is both input and output of its own production process.\""
+    ]
 }
 ```
