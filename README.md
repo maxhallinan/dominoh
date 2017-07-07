@@ -21,8 +21,8 @@ Output:
     "fragments": [
         {
             "text": "\"Information is both input and output of its own production process.\"",
-            "start": [0, 0],
-            "end": [0, 72]
+            "start": [1, 1],
+            "end": [1, 72]
         }
     ]
 }
@@ -43,8 +43,8 @@ Output:
     "fragments": [
         {
             "text": "\"Information is both input and output of its own production process.\"",
-            "start": [0, 0],
-            "end": [0, 72]
+            "start": [1, 1],
+            "end": [1, 72]
         }
     ],
     "tags": [
