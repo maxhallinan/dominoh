@@ -59,3 +59,12 @@ Output:
     ]
 }
 ```
+
+
+## Development
+
+```
+virtualenv .
+source bin/activate
+pip install -e
+```
