@@ -1,6 +1,6 @@
-# dominoh 
+# dominoh
 
-A lightweight markup language (LML) for note-taking. 
+A lightweight markup language (LML) for note-taking.
 
 ## Markup
 
@@ -54,7 +54,7 @@ Output:
         },
         {
             "name": "Yochai Benkler",
-            "fragments": [0] 
+            "fragments": [0]
         }
     ]
 }
@@ -64,7 +64,7 @@ Output:
 ## Development
 
 ```
-virtualenv .
-source bin/activate
-pip install -e
+virtualenv venv
+source venv/bin/activate
+pip install -e .
 ```

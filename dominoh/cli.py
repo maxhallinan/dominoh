@@ -6,5 +6,5 @@ import click
         'input_path',
         required=True)
 def main(input_path):
-    click.echo("Hello World!")
-
+    with open(input_path, 'r', encoding='utf-8-sig') as input_file:
+        click.echo(input_file.read())
