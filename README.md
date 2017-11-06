@@ -1,4 +1,4 @@
-# Domino
+# dominoh
 
 _Work in Progress_
 
@@ -147,4 +147,13 @@ Benkler
     ]
   }
 ]
+```
+
+
+## Development
+
+```
+virtualenv venv
+source venv/bin/activate
+pip install -e .
 ```
