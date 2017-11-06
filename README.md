@@ -1,106 +1,150 @@
 # Domino 
 
+_Work in Progress_
+
 A lightweight markup language (LML) for notetaking. 
 
-## Markup
+## Syntax
 
-### Fragment
-
-#### Fragment: Basic
+### Fragment: Basic
 
 Input:
 
 ```
-::"Information is both input and output of its own production process."::
+::Information is both input and output of its own production process.::::
 ```
 
 Output:
 
 ```json
-{
-    "fragments": [
-        {
-            "_id": 1,
-            "text": "\"Information is both input and output of its own production process.\"",
-            "start": 0,
-            "end": 72
-        }
-    ],
-    "document": "\"Information is both input and output of its own production process.\""
-}
+[
+  {
+    "text": "Information is both input and output of its own production process.",
+    "start": {
+      "line": 1,
+      "char": 1
+    },
+    "end": {
+      "line": 1,
+      "char": 72
+    }, 
+    "notes": [],
+    "sources": [],
+    "tags": []
+  }
+]
 ```
 
-#### Fragment: Tagged
+### Fragment: Tagged
 
 Input:
 
 ```
-::"Information is both input and output of its own production process."|networked information economy, Yochai Benkler|
+::Information is both input and output of its own production process.
+::networked information economy, Yochai Benkler::
 ```
 
 Output:
 
 ```json
-{
-    "fragments": [
-        {
-            "_id": 1,
-            "text": "\"Information is both input and output of its own production process.\"",
-            "start": 0,
-            "end": 72
-        },
+[
+  {
+    "text": "Information is both input and output of its own production process.",
+    "start": {
+      "line": 1,
+      "char": 1
+    },
+    "end": {
+      "line": 1,
+      "char": 72
+    }, 
+    "notes": [],
+    "sources": [],
+    "tags": [
+      "networked information economy",
+      "Yochai Benkler"
+    ]
+  }
+]
+```
+
+### Fragment: Sourced
+
+```
+:::
+Benkler
+  The Wealth of Networks
+  ISBN 9780300127232
+:::
+
+::Information is both input and output of its own production process.
+::$Benkler, networked information economy, Yochai Benkler::
+```
+
+```json
+[
+  {
+    "text": "Information is both input and output of its own production process.",
+    "start": {
+      "line": 1,
+      "char": 1
+    },
+    "end": {
+      "line": 1,
+      "char": 72
+    } 
+    "notes": [],
+    "sources": [
+      "The Wealth of Networks",
+      "ISBN 9780300127232"
     ],
     "tags": [
-        {
-            "_id": 2,
-            "name": "networked information economy",
-            "fragments": [1]
-        },
-        {
-            "_id": 3,
-            "name": "Yochai Benkler",
-            "fragments": [1] 
-        }
-    ],
-    "document": "\"Information is both input and output of its own production process.\""
-}
+      "networked information economy",
+      "Yochai Benkler"
+    ]
+  }
+]
 ```
 
-#### Fragment: Sourced
+### Fragment: Annotated
 
 ```
 :::
-sources:
-    Benkler:
-        title: The Wealth of Networks
-        location: ISBN 9780300127232
+Benkler
+  The Wealth of Networks
+  ISBN 9780300127232
+
+1
+  Yochai Benkler is a professor at Harvard Law School.
 :::
 
-::"Information is both input and output of its own production process."::[Benkler:: Chapter 2]
+::Information is both input and output of its own production process.
+::$Benkler, [1], networked information economy, Yochai Benkler::
 ```
 
 ```json
-{
-    "sources": [
-        {
-            "_id": 4,
-            "title": "The Wealth of Networks",
-            "fragments": [
-                {
-                    "_id": 1,
-                    "location": ["ISBN 9780300127232", "Chapter 2"]
-                }
-            ]
-        }
-    ], 
-    "fragments": [
-        {
-            "_id": 1,
-            "text": "\"Information is both input and output of its own production process.\"",
-            "start": 0,
-            "end": 72
-        },
+[
+  {
+    "text": "Information is both input and output of its own production process.",
+    "start": {
+      "line": 1,
+      "char": 1
+    },
+    "end": {
+      "line": 1,
+      "char": 72
+    } 
+    "notes": [
+      "Yochai Benkler is a professor at Harvard Law School."
     ],
-    "document": "\"Information is both input and output of its own production process.\""
-}
+    "sources": [
+      "The Wealth of Networks",
+      "ISBN 9780300127232"
+    ],
+    "tags": [
+      "networked information economy",
+      "Yochai Benkler"
+    ]
+  }
+]
 ```
