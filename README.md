@@ -1,8 +1,8 @@
-# Domino 
+# Domino
 
 _Work in Progress_
 
-A lightweight markup language (LML) for notetaking. 
+A lightweight markup language (LML) for notetaking.
 
 ## Syntax
 
@@ -11,7 +11,7 @@ A lightweight markup language (LML) for notetaking.
 Input:
 
 ```
-::Information is both input and output of its own production process.::::
+::Information is both input and output of its own production process.::
 ```
 
 Output:
@@ -27,7 +27,7 @@ Output:
     "end": {
       "line": 1,
       "char": 72
-    }, 
+    },
     "notes": [],
     "sources": [],
     "tags": []
@@ -40,8 +40,8 @@ Output:
 Input:
 
 ```
-::Information is both input and output of its own production process.
-::networked information economy, Yochai Benkler::
+::Information is both input and output of its own production process.::
+|networked information economy, Yochai Benkler|
 ```
 
 Output:
@@ -57,7 +57,7 @@ Output:
     "end": {
       "line": 1,
       "char": 72
-    }, 
+    },
     "notes": [],
     "sources": [],
     "tags": [
@@ -77,8 +77,8 @@ Benkler
   ISBN 9780300127232
 :::
 
-::Information is both input and output of its own production process.
-::$Benkler, networked information economy, Yochai Benkler::
+::Information is both input and output of its own production process.::
+|$Benkler, networked information economy, Yochai Benkler|
 ```
 
 ```json
@@ -92,7 +92,7 @@ Benkler
     "end": {
       "line": 1,
       "char": 72
-    } 
+    },
     "notes": [],
     "sources": [
       "The Wealth of Networks",
@@ -118,8 +118,8 @@ Benkler
   Yochai Benkler is a professor at Harvard Law School.
 :::
 
-::Information is both input and output of its own production process.
-::$Benkler, [1], networked information economy, Yochai Benkler::
+::Information is both input and output of its own production process.::
+|$Benkler, [1], networked information economy, Yochai Benkler|
 ```
 
 ```json
@@ -133,7 +133,7 @@ Benkler
     "end": {
       "line": 1,
       "char": 72
-    } 
+    },
     "notes": [
       "Yochai Benkler is a professor at Harvard Law School."
     ],
