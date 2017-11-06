@@ -2,7 +2,7 @@
 
 _Work in Progress_
 
-A lightweight markup language (LML) for notetaking.
+A lightweight markup language for annotating text.
 
 ## Syntax
 
