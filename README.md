@@ -41,7 +41,7 @@ Input:
 
 ```
 ::Information is both input and output of its own production process.::
-|networked information economy, Yochai Benkler|
+::networked information economy, Yochai Benkler::
 ```
 
 Output:
@@ -78,7 +78,7 @@ Benkler
 :::
 
 ::Information is both input and output of its own production process.::
-|$Benkler, networked information economy, Yochai Benkler|
+::$Benkler, networked information economy, Yochai Benkler::
 ```
 
 ```json
@@ -119,7 +119,7 @@ Benkler
 :::
 
 ::Information is both input and output of its own production process.::
-|$Benkler, [1], networked information economy, Yochai Benkler|
+::$Benkler, @1, networked information economy, Yochai Benkler::
 ```
 
 ```json
