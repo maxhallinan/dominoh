@@ -25,29 +25,7 @@ Parsed
 [
   {
     "fragment": "Information is both input and output of its own production process.",
-    "symbols": {},
-    "location": {
-      "clean": {
-        "start": {
-          "line": 2,
-          "char": 1
-        },
-        "end": {
-          "line": 2,
-          "char": 72 
-        }
-      },
-      "source": {
-        "start": {
-          "line": 9,
-          "char": 3
-        },
-        "end": {
-          "line": 9,
-          "char": 75 
-        }
-      }
-    }
+    "symbols": {}
   }
 ]
 ```
@@ -82,28 +60,6 @@ Parsed
       "tags": [
         "networked information economy"
       ]
-    },
-    "location": {
-      "clean": {
-        "start": {
-          "line": 2,
-          "char": 1
-        },
-        "end": {
-          "line": 2,
-          "char": 72 
-        }
-      },
-      "source": {
-        "start": {
-          "line": 9,
-          "char": 3
-        },
-        "end": {
-          "line": 9,
-          "char": 75 
-        }
-      }
     }
   }
 ]
@@ -140,7 +96,18 @@ Parsed
         "Yochai Benkler",
         "networked information economy"
       ]
-    },
+    }
+  }
+]
+```
+
+## Compiler extras
+
+### Location
+
+```json
+[
+  {
     "location": {
       "clean": {
         "start": {
@@ -166,3 +133,5 @@ Parsed
   }
 ]
 ```
+
+### Clean
