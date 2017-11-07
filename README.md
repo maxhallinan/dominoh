@@ -8,7 +8,6 @@ Annotations are associations between a fragment of text and one or more subtexts
 User-defined symbols mark semantic relationships between a text fragment and 
 each of its subtexts.
 
-
 ## Syntax
 
 
@@ -28,13 +27,25 @@ Parsed
     "fragment": "Information is both input and output of its own production process.",
     "symbols": {},
     "location": {
-      "start": {
-        "line": 1,
-        "char": 1
+      "clean": {
+        "start": {
+          "line": 2,
+          "char": 1
+        },
+        "end": {
+          "line": 2,
+          "char": 72 
+        }
       },
-      "end": {
-        "line": 1,
-        "char": 72 
+      "source": {
+        "start": {
+          "line": 9,
+          "char": 3
+        },
+        "end": {
+          "line": 9,
+          "char": 75 
+        }
       }
     }
   }
@@ -73,13 +84,25 @@ Parsed
       ]
     },
     "location": {
-      "start": {
-        "line": 1,
-        "char": 1
+      "clean": {
+        "start": {
+          "line": 2,
+          "char": 1
+        },
+        "end": {
+          "line": 2,
+          "char": 72 
+        }
       },
-      "end": {
-        "line": 1,
-        "char": 72 
+      "source": {
+        "start": {
+          "line": 9,
+          "char": 3
+        },
+        "end": {
+          "line": 9,
+          "char": 75 
+        }
       }
     }
   }
@@ -119,13 +142,25 @@ Parsed
       ]
     },
     "location": {
-      "start": {
-        "line": 1,
-        "char": 1
+      "clean": {
+        "start": {
+          "line": 2,
+          "char": 1
+        },
+        "end": {
+          "line": 2,
+          "char": 72 
+        }
       },
-      "end": {
-        "line": 1,
-        "char": 72 
+      "source": {
+        "start": {
+          "line": 9,
+          "char": 3
+        },
+        "end": {
+          "line": 9,
+          "char": 75 
+        }
       }
     }
   }
