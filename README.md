@@ -12,7 +12,7 @@ each of its subtexts.
 ## Syntax
 
 
-### Basic
+### Fragment
 
 Document
 
@@ -26,7 +26,7 @@ Parsed
 [
   {
     "fragment": "Information is both input and output of its own production process.",
-    "subtexts": {},
+    "symbols": {},
     "location": {
       "start": {
         "line": 1,
@@ -42,7 +42,7 @@ Parsed
 ```
 
 
-### Subtext
+### Symbols
 
 Document
 
@@ -63,8 +63,8 @@ Parsed
 ```json
 [
   {
-    "text": "Information is both input and output of its own production process.",
-    "subtexts": {
+    "fragment": "Information is both input and output of its own production process.",
+    "symbols": {
       "sources": [
         "Yochai Benkler"
       ],
@@ -108,8 +108,8 @@ Parsed
 ```json
 [
   {
-    "text": "Information is both input and output of its own production process.",
-    "subtexts": {
+    "fragment": "Information is both input and output of its own production process.",
+    "symbols": {
       "sources": [
         "Yochai Benkler"
       ],
