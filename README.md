@@ -167,11 +167,6 @@ Parsed
 ]
 ```
 
-### Escape
-
-Escape a single character: `\`.
-
-Escape a range of characters: `f`.
 
 ## Grammar
 
