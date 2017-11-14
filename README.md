@@ -209,10 +209,8 @@ SymbolListOpen = "(("
 SymbolListClose = "))"
 
 SymbolListBody
- = Symbol
- | Symbol, SymbolListBody
-
-Symbol = Word, LineSpace
+  = Word
+  | Word, LineSpace, SymbolListBody
 
 LineBreak 
   = "\n" 
