@@ -25,7 +25,64 @@ Parsed
 [
   {
     "fragment": "Information is both input and output of its own production process.",
-    "symbols": {}
+    "subtexts": [],
+    "symbols": {},
+    "tags": []
+  }
+]
+```
+
+
+### Subtext
+
+Document
+
+```
+:::
+benkler , Yochai Benkler
+:::
+
+::Information is both input and output of its own production process.:: (( benkler ))
+```
+
+Parsed
+
+```json
+[
+  {
+    "fragment": "Information is both input and output of its own production process.",
+    "subtexts": [
+      "Yochai Benkler"
+    ],
+    "symbols": {},
+    "tags": []
+  }
+]
+```
+
+### Tags
+
+Document
+
+```
+:::
+network_econ : networked information economy
+:::
+
+::Information is both input and output of its own production process.:: (( network_econ ))
+```
+
+Parsed
+
+```json
+[
+  {
+    "fragment": "Information is both input and output of its own production process.",
+    "subtexts": [],
+    "symbols": {},
+    "tags": [
+      "networked information economy"
+    ]
   }
 ]
 ```
@@ -38,13 +95,11 @@ Document
 ```
 :::
 $ : sources
-# : tags
 
-benkler      , Yochai Benkler
-network_econ , networked information economy
+benkler , Yochai Benkler
 :::
 
-::Information is both input and output of its own production process.:: (( $benkler #network_econ ))
+::Information is both input and output of its own production process.:: (( $benkler ))
 ```
 
 Parsed
@@ -53,14 +108,17 @@ Parsed
 [
   {
     "fragment": "Information is both input and output of its own production process.",
+    "subtexts": [
+      "Yochai Benkler"
+    ],
     "symbols": {
       "sources": [
         "Yochai Benkler"
-      ],
-      "tags": [
-        "networked information economy"
       ]
-    }
+    },
+    "tags": [
+      "sources"
+    ]
   }
 ]
 ```
@@ -88,6 +146,10 @@ Parsed
 [
   {
     "fragment": "Information is both input and output of its own production process.",
+    "subtexts": [
+      "Yochai Benkler",
+      "networked information economy"
+    ],
     "symbols": {
       "sources": [
         "Yochai Benkler"
@@ -96,8 +158,11 @@ Parsed
         "Yochai Benkler",
         "networked information economy"
       ]
-    }
+    },
+    "tags": [
+      "sources",
+      "tags"
+    ]
   }
 ]
 ```
-
