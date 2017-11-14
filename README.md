@@ -187,10 +187,10 @@ Meta = MetaBlock, MetaBody, MetaBlock
 MetaBlock = ":::"
 
 MetaBody 
-  = LineSpace, TagExpr, WhiteSpace, LineBreak
-  | LineSpace, TagExpr, WhiteSpace, LineBreak, MetaBody
-  | LineSpace, SubtextExpr, WhiteSpace, LineBreak
-  | LineSpace, SubtextExpr, WhiteSpace, LineBreak, MetaBody
+  = Linespace, TagExpr, Whitespace, LineBreak
+  | Linespace, TagExpr, Whitespace, LineBreak, MetaBody
+  | Linespace, SubtextExpr, Whitespace, LineBreak
+  | Linespace, SubtextExpr, Whitespace, LineBreak, MetaBody
 
 TagExpr = Word, ":", String, LineBreak
 
@@ -204,19 +204,19 @@ FragmentBlock = "::"
 
 SymbolList = SymbolListOpen, SymbolListBody, SymbolListClose
 
-SymbolListOpen = "(("
+SymbolListOpen = "((", Whitespace
 
-SymbolListClose = "))"
+SymbolListClose = Whitespace, "))"
 
 SymbolListBody
   = Word
-  | Word, LineSpace, SymbolListBody
+  | Word, Linespace, SymbolListBody
 
 LineBreak 
   = "\n" 
   | "\n", LineBreak
 
-LineSpace 
+Linespace 
   = Space
   | Tab
 
@@ -228,13 +228,13 @@ Tab
   = "\t"
   | "\t", Tab
 
-WhiteSpace 
+Whitespace 
   = Space
-  | Space, WhiteSpace
+  | Space, Whitespace
   | Tab
-  | Tab, WhiteSpace
+  | Tab, Whitespace
   | LineBreak
-  | LineBreak, WhiteSpace
+  | LineBreak, Whitespace
   | Empty 
 
 Text 
