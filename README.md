@@ -172,7 +172,7 @@ Parsed
 
 This grammar uses [Extended Backus-Naur Form](https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form).
 
-```ebnf
+```
 Document 
   = Text, Pair, Text
   | Text, Pair, Text, Document
