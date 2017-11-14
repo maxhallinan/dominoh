@@ -166,3 +166,94 @@ Parsed
   }
 ]
 ```
+
+### Escape
+
+Escape a single character: `\`.
+
+Escape a range of characters: `f`.
+
+## Grammar
+
+This grammar uses [Extended Backus-Naur Form]
+(https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form).
+
+```ebnf
+Document 
+  = Text, Pair, Text
+  | Text, Pair, Text, Document
+
+Pair 
+  = Meta, Text, Fragment
+  | Fragment, Text, Meta
+  | Fragment
+
+Meta = MetaBlock, MetaBody, MetaBlock
+
+MetaBlock = ":::"
+
+MetaBody 
+  = LineSpace, TagExpr, WhiteSpace, LineBreak
+  | LineSpace, SubtextExpr, WhiteSpace, LineBreak, MetaBody
+  | LineSpace, SubtextExpr, WhiteSpace, LineBreak
+  | LineSpace, SubtextExpr, WhiteSpace, LineBreak, MetaBody
+
+TagExpr = Word, ":", String, LineBreak
+
+SubtextExpr = Word, ":", String, LineBreak
+
+Fragment 
+  = FragmentBlock, Any, FragmentBlock
+  | FragmentBlock, Any, FragmentBlock, SymbolList
+
+FragmentBlock = "::"
+
+SymbolList = SymbolListOpen, SymbolListBody, SymbolListClose
+
+SymbolListOpen = "(("
+
+SymbolListClose = "))"
+
+SymbolListBody
+ = Symbol
+ | Symbol, SymbolListBody
+
+Symbol = Word, LineSpace
+
+LineBreak 
+  = "\n" 
+  | "\n", LineBreak
+
+LineSpace 
+  = Space
+  | Tab
+
+Space 
+  = "\s"
+  | "\s", Space
+
+Tab 
+  = "\t"
+  | "\t", Tab
+
+WhiteSpace 
+  = Space
+  | Space, WhiteSpace
+  | Tab
+  | Tab, WhiteSpace
+  | LineBreak
+  | LineBreak, WhiteSpace
+  | Empty 
+
+Text 
+  = Any 
+  | Empty
+
+Any = ? one or more occurrences of any character, including a linebreak ?
+
+String = ? one or more occurrences of any character, not including a linebreak ?
+
+Word = ? one or more occurences of any character, not including whitespace ?
+
+Empty = ""
+```
