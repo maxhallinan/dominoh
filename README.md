@@ -241,9 +241,9 @@ Text
   = Any 
   | Empty
 
-Any = ? one or more occurrences of any character, including a linebreak ?
+Any = ? one or more occurrences of any character, including linebreaks ?
 
-String = ? one or more occurrences of any character, not including a linebreak ?
+String = ? one or more occurrences of any character, not including linebreaks ?
 
 Word = ? one or more occurences of any character, not including whitespace ?
 
