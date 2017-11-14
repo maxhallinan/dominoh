@@ -44,7 +44,7 @@ benkler      , Yochai Benkler
 network_econ , networked information economy
 :::
 
-::Information is both input and output of its own production process.:: $benkler #network_econ
+::Information is both input and output of its own production process.:: (( $benkler #network_econ ))
 ```
 
 Parsed
@@ -79,7 +79,7 @@ benkler      , Yochai Benkler
 network_econ , networked information economy
 :::
 
-::Information is both input and output of its own production process.:: $#benkler #network_econ
+::Information is both input and output of its own production process.:: (( $#benkler #network_econ ))
 ```
 
 Parsed
@@ -101,37 +101,3 @@ Parsed
 ]
 ```
 
-## Compiler extras
-
-### Location
-
-```json
-[
-  {
-    "location": {
-      "clean": {
-        "start": {
-          "line": 2,
-          "char": 1
-        },
-        "end": {
-          "line": 2,
-          "char": 72 
-        }
-      },
-      "source": {
-        "start": {
-          "line": 9,
-          "char": 3
-        },
-        "end": {
-          "line": 9,
-          "char": 75 
-        }
-      }
-    }
-  }
-]
-```
-
-### Clean
