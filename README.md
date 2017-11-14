@@ -193,7 +193,7 @@ MetaBlock = ":::"
 
 MetaBody 
   = LineSpace, TagExpr, WhiteSpace, LineBreak
-  | LineSpace, SubtextExpr, WhiteSpace, LineBreak, MetaBody
+  | LineSpace, TagExpr, WhiteSpace, LineBreak, MetaBody
   | LineSpace, SubtextExpr, WhiteSpace, LineBreak
   | LineSpace, SubtextExpr, WhiteSpace, LineBreak, MetaBody
 
