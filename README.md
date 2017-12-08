@@ -207,7 +207,7 @@ SubtextExpr = Word, ":", String, LineBreak;
 
 Fragment
   = FragmentBlock, Any, FragmentBlock,
-  | FragmentBlock, Any, SymbolList, Any, FragmentBlock
+  | FragmentBlock, Any, SymbolList, Any, FragmentBlock;
 
 FragmentBlock = "::";
 
