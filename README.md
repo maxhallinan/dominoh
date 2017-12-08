@@ -2,10 +2,10 @@
 
 _Work in Progress_
 
-Dominoh is a lightweight markup language for annotating text. 
+Dominoh is a lightweight markup language for annotating text.
 
-Annotations are associations between a fragment of text and one or more subtexts. 
-User-defined symbols mark semantic relationships between a text fragment and 
+Annotations are associations between a fragment of text and one or more subtexts.
+User-defined symbols mark semantic relationships between a text fragment and
 each of its subtexts.
 
 ## Syntax
@@ -38,7 +38,7 @@ Document
 
 ```
 :::
-benkler , Yochai Benkler 
+benkler , Yochai Benkler
 :::
 
 ::Information is both input and output of its own production process.:: (( benkler ))
@@ -94,6 +94,41 @@ Parsed
 
 ### Compound symbols
 
+```
+:::
+$ : sources
+# : keywords
+
+benkler , Yochai Benkler
+:::
+
+::Information is both input and output of its own production process.:: (( $#benkler ))
+```
+
+Parsed
+
+```json
+[
+  {
+    "fragment": "Information is both input and output of its own production process.",
+    "subtexts": [
+      "Yochai Benkler"
+    ],
+    "meta": {
+      "sources": [
+        "Yochai Benkler"
+      ],
+      "keywords": [
+        "Yochai Benkler"
+      ]
+    }
+  }
+]
+```
+
+
+### Multiple subtexts
+
 Document
 
 ```
@@ -137,11 +172,11 @@ Parsed
 This grammar uses [Extended Backus-Naur Form](https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form).
 
 ```ebnf
-Document 
+Document
   = Text, Pair, Text
   | Text, Pair, Text, Document;
 
-Pair 
+Pair
   = Meta, Text, Fragment
   | Fragment, Text, Meta
   | Fragment;
@@ -150,7 +185,7 @@ Meta = MetaBlock, MetaBody, MetaBlock;
 
 MetaBlock = ":::";
 
-MetaBody 
+MetaBody
   = Linespace, TagExpr, Whitespace, LineBreak
   | Linespace, TagExpr, Whitespace, LineBreak, MetaBody
   | Linespace, SubtextExpr, Whitespace, LineBreak
@@ -160,7 +195,7 @@ TagExpr = Word, ":", String, LineBreak;
 
 SubtextExpr = Word, ":", String, LineBreak;
 
-Fragment 
+Fragment
   = FragmentBlock, Any, FragmentBlock
   | FragmentBlock, Any, FragmentBlock, SymbolList;
 
@@ -176,23 +211,23 @@ SymbolListBody
   = Word
   | Word, Linespace, SymbolListBody;
 
-LineBreak 
-  = "\n" 
+LineBreak
+  = "\n"
   | "\n", LineBreak;
 
-Linespace 
+Linespace
   = Space
   | Tab;
 
-Space 
+Space
   = "\s"
   | "\s", Space;
 
-Tab 
+Tab
   = "\t"
   | "\t", Tab;
 
-Whitespace 
+Whitespace
   = Space
   | Space, Whitespace
   | Tab
@@ -201,8 +236,8 @@ Whitespace
   | LineBreak, Whitespace
   | Empty;
 
-Text 
-  = Any 
+Text
+  = Any
   | Empty;
 
 Any = ? one or more occurrences of any character, including linebreaks ?;
