@@ -25,8 +25,8 @@ Parsed
 [
   {
     "fragment": "Information is both input and output of its own production process.",
-    "symbols": [] ,
     "subtexts": [],
+    "symbols": [] ,
     "meta": {}
   }
 ]
