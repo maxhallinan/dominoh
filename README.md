@@ -16,7 +16,9 @@ each of its subtexts.
 Document
 
 ```
-::Information is both input and output of its own production process.::
+::
+Information is both input and output of its own production process.
+::
 ```
 
 Parsed
@@ -41,7 +43,9 @@ Document
 benkler , Yochai Benkler
 :::
 
-::Information is both input and output of its own production process.:: (( benkler ))
+:: [ benkler ]
+Information is both input and output of its own production process.
+::
 ```
 
 Parsed
@@ -70,7 +74,9 @@ $ : sources
 benkler , Yochai Benkler
 :::
 
-::Information is both input and output of its own production process.:: (( $benkler ))
+:: [ $benkler ]
+Information is both input and output of its own production process.
+::
 ```
 
 Parsed
@@ -102,7 +108,9 @@ $ : sources
 benkler , Yochai Benkler
 :::
 
-::Information is both input and output of its own production process.:: (( $#benkler ))
+:: [ $#benkler ]
+Information is both input and output of its own production process.
+::
 ```
 
 Parsed
@@ -140,7 +148,9 @@ benkler      , Yochai Benkler
 network_econ , networked information economy
 :::
 
-::Information is both input and output of its own production process.:: (( $#benkler #network_econ ))
+:: [ $#benkler #network_econ ]
+Information is both input and output of its own production process.
+::
 ```
 
 Parsed
@@ -196,16 +206,16 @@ TagExpr = Word, ":", String, LineBreak;
 SubtextExpr = Word, ":", String, LineBreak;
 
 Fragment
-  = FragmentBlock, Any, FragmentBlock
-  | FragmentBlock, Any, FragmentBlock, SymbolList;
+  = FragmentBlock, Any, FragmentBlock,
+  | FragmentBlock, Any, SymbolList, Any, FragmentBlock
 
 FragmentBlock = "::";
 
 SymbolList = SymbolListOpen, SymbolListBody, SymbolListClose;
 
-SymbolListOpen = "((", Whitespace;
+SymbolListOpen = "[", Whitespace;
 
-SymbolListClose = Whitespace, "))";
+SymbolListClose = Whitespace, "]";
 
 SymbolListBody
   = Word
