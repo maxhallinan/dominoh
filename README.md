@@ -26,7 +26,6 @@ Parsed
   {
     "fragment": "Information is both input and output of its own production process.",
     "subtexts": [],
-    "symbols": [] ,
     "meta": {}
   }
 ]
@@ -54,7 +53,6 @@ Parsed
     "subtexts": [
       "Yochai Benkler"
     ],
-    "symbols": [], 
     "meta": {}
   }
 ]
@@ -83,9 +81,6 @@ Parsed
     "fragment": "Information is both input and output of its own production process.",
     "subtexts": [
       "Yochai Benkler"
-    ],
-    "symbols": [
-      "sources"
     ],
     "meta": {
       "sources": [
@@ -122,10 +117,6 @@ Parsed
     "subtexts": [
       "Yochai Benkler",
       "networked information economy"
-    ],
-    "symbols": [
-      "sources",
-      "tags"
     ],
     "meta": {
       "sources": [
