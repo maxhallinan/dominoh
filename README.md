@@ -25,21 +25,21 @@ Parsed
 [
   {
     "fragment": "Information is both input and output of its own production process.",
+    "symbols": [] ,
     "subtexts": [],
-    "symbols": {},
-    "tags": []
+    "meta": {}
   }
 ]
 ```
 
 
-### Subtext
+### Subtexts
 
 Document
 
 ```
 :::
-benkler , Yochai Benkler
+benkler , Yochai Benkler 
 :::
 
 ::Information is both input and output of its own production process.:: (( benkler ))
@@ -54,35 +54,8 @@ Parsed
     "subtexts": [
       "Yochai Benkler"
     ],
-    "symbols": {},
-    "tags": []
-  }
-]
-```
-
-### Tags
-
-Document
-
-```
-:::
-network_econ : networked information economy
-:::
-
-::Information is both input and output of its own production process.:: (( network_econ ))
-```
-
-Parsed
-
-```json
-[
-  {
-    "fragment": "Information is both input and output of its own production process.",
-    "subtexts": [],
-    "symbols": {},
-    "tags": [
-      "networked information economy"
-    ]
+    "symbols": [], 
+    "meta": {}
   }
 ]
 ```
@@ -111,14 +84,14 @@ Parsed
     "subtexts": [
       "Yochai Benkler"
     ],
-    "symbols": {
+    "symbols": [
+      "sources"
+    ],
+    "meta": {
       "sources": [
         "Yochai Benkler"
       ]
-    },
-    "tags": [
-      "sources"
-    ]
+    }
   }
 ]
 ```
@@ -131,7 +104,7 @@ Document
 ```
 :::
 $ : sources
-# : tags
+# : keywords
 
 benkler      , Yochai Benkler
 network_econ , networked information economy
@@ -150,19 +123,19 @@ Parsed
       "Yochai Benkler",
       "networked information economy"
     ],
-    "symbols": {
+    "symbols": [
+      "sources",
+      "tags"
+    ],
+    "meta": {
       "sources": [
         "Yochai Benkler"
       ],
-      "tags": [
+      "keywords": [
         "Yochai Benkler",
         "networked information economy"
       ]
-    },
-    "tags": [
-      "sources",
-      "tags"
-    ]
+    }
   }
 ]
 ```
@@ -172,61 +145,61 @@ Parsed
 
 This grammar uses [Extended Backus-Naur Form](https://en.wikipedia.org/wiki/Extended_Backus%E2%80%93Naur_form).
 
-```
+```ebnf
 Document 
   = Text, Pair, Text
-  | Text, Pair, Text, Document
+  | Text, Pair, Text, Document;
 
 Pair 
   = Meta, Text, Fragment
   | Fragment, Text, Meta
-  | Fragment
+  | Fragment;
 
-Meta = MetaBlock, MetaBody, MetaBlock
+Meta = MetaBlock, MetaBody, MetaBlock;
 
-MetaBlock = ":::"
+MetaBlock = ":::";
 
 MetaBody 
   = Linespace, TagExpr, Whitespace, LineBreak
   | Linespace, TagExpr, Whitespace, LineBreak, MetaBody
   | Linespace, SubtextExpr, Whitespace, LineBreak
-  | Linespace, SubtextExpr, Whitespace, LineBreak, MetaBody
+  | Linespace, SubtextExpr, Whitespace, LineBreak, MetaBody;
 
-TagExpr = Word, ":", String, LineBreak
+TagExpr = Word, ":", String, LineBreak;
 
-SubtextExpr = Word, ":", String, LineBreak
+SubtextExpr = Word, ":", String, LineBreak;
 
 Fragment 
   = FragmentBlock, Any, FragmentBlock
-  | FragmentBlock, Any, FragmentBlock, SymbolList
+  | FragmentBlock, Any, FragmentBlock, SymbolList;
 
-FragmentBlock = "::"
+FragmentBlock = "::";
 
-SymbolList = SymbolListOpen, SymbolListBody, SymbolListClose
+SymbolList = SymbolListOpen, SymbolListBody, SymbolListClose;
 
-SymbolListOpen = "((", Whitespace
+SymbolListOpen = "((", Whitespace;
 
-SymbolListClose = Whitespace, "))"
+SymbolListClose = Whitespace, "))";
 
 SymbolListBody
   = Word
-  | Word, Linespace, SymbolListBody
+  | Word, Linespace, SymbolListBody;
 
 LineBreak 
   = "\n" 
-  | "\n", LineBreak
+  | "\n", LineBreak;
 
 Linespace 
   = Space
-  | Tab
+  | Tab;
 
 Space 
   = "\s"
-  | "\s", Space
+  | "\s", Space;
 
 Tab 
   = "\t"
-  | "\t", Tab
+  | "\t", Tab;
 
 Whitespace 
   = Space
@@ -235,17 +208,17 @@ Whitespace
   | Tab, Whitespace
   | LineBreak
   | LineBreak, Whitespace
-  | Empty 
+  | Empty;
 
 Text 
   = Any 
-  | Empty
+  | Empty;
 
-Any = ? one or more occurrences of any character, including linebreaks ?
+Any = ? one or more occurrences of any character, including linebreaks ?;
 
-String = ? one or more occurrences of any character, not including linebreaks ?
+String = ? one or more occurrences of any character, not including linebreaks ?;
 
-Word = ? one or more occurences of any character, not including whitespace ?
+Word = ? one or more occurences of any character, not including whitespace ?;
 
-Empty = ""
+Empty = "";
 ```
